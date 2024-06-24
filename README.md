@@ -27,34 +27,34 @@ Lend and no overdue
 overdue checks
 ![alt text](assests/lend-no-overduecheck.png)
 
-console logs during testing:
+console logs during testing:  
 
-(base) sangjunelee@SangjuncBookPro test1 % node src/index.js
-Server is running on port 3001
-GET /
-OPTIONS /api/users/lend
-OPTIONS /api/users/return
-OPTIONS /api/users/lend
-OPTIONS /api/users/lend
-POST /api/users/lend
-POST /api/users/lend
-POST /api/users/lend
-GET /api/users/check-overdue
-GET /api/users/check-overdue
-GET /api/users/check-overdue
-GET /api/users/check-overdue
-GET /api/users/check-overdue
-GET /api/users/check-overdue
-GET /api/users/check-overdue?username=navid%0A
-GET /api/users/check-overdue%0A
-POST /api/users/lend%0A
-POST /api/users/lend
-POST /api/users/lend
-POST /api/users/return
-POST /api/users/lend
-GET /api/users/check-overdue?username=sangjune
-POST /api/users/return
-POST /api/users/return
-GET /api/users/check-overdue?username=sangjune
-POST /api/users/lend
-GET /api/users/check-overdue?username=sangjune
+(base) sangjunelee@SangjuncBookPro test1 % node src/index.js  
+Server is running on port 3001  
+GET /  
+OPTIONS /api/users/lend  
+OPTIONS /api/users/return  
+OPTIONS /api/users/lend  
+OPTIONS /api/users/lend  
+POST /api/users/lend  
+POST /api/users/lend  
+POST /api/users/lend  
+GET /api/users/check-overdue  
+GET /api/users/check-overdue  
+GET /api/users/check-overdue  
+GET /api/users/check-overdue  
+GET /api/users/check-overdue  
+GET /api/users/check-overdue  
+GET /api/users/check-overdue?username=navid%0A  
+GET /api/users/check-overdue%0A  
+POST /api/users/lend%0A  
+POST /api/users/lend  
+POST /api/users/lend  
+POST /api/users/return  
+POST /api/users/lend  
+GET /api/users/check-overdue?username=sangjune  
+POST /api/users/return  
+POST /api/users/return  
+GET /api/users/check-overdue?username=sangjune  
+POST /api/users/lend  
+GET /api/users/check-overdue?username=sangjune  
