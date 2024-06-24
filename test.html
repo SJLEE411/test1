@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Test</title>
+</head>
+<body>
+  <h1>Lend a Book</h1>
+  <form id="lendForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="date">Date (ISO 8601 format):</label>
+    <input type="text" id="date" name="date" required><br><br>
+    <button type="submit">Lend Book</button>
+  </form>
+
+  <h1>Return a Book</h1>
+  <form id="returnForm">
+    <label for="usernameReturn">Username:</label>
+    <input type="text" id="usernameReturn" name="username" required><br><br>
+    <button type="submit">Return Book</button>
+  </form>
+
+  <script>
+    document.getElementById('lendForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const date = document.getElementById('date').value;
+
+      fetch('http://localhost:3001/api/users/lend', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, date }),
+      })
+      .then(response => response.json())
+      .then(data => alert(JSON.stringify(data)))
+      .catch(error => console.error('Error:', error));
+    });
+
+    document.getElementById('returnForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('usernameReturn').value;
+
+      fetch('http://localhost:3001/api/users/return', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username }),
+      })
+      .then(response => response.json())
+      .then(data => alert(JSON.stringify(data)))
+      .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>
